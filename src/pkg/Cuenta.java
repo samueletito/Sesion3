@@ -19,4 +19,8 @@ public class Cuenta {
 	public void ingresar(Double i) {
 		saldo += i;
 	}
+	
+	public void retirar(Double i) {
+		saldo -= i;
+	}
 }
