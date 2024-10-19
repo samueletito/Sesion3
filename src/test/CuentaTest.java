@@ -57,7 +57,7 @@ class CuentaTest {
 		cuenta67890.retirar(200d);
 		cuenta67890.retirar(150d);
 		cuenta12345.retirar(200d);
-		cuenta67890.retirar(50d);
+		cuenta67890.ingresar(50d);
 		cuenta67890.retirar(100d);
 		
 		boolean comprobar = false;
