@@ -3,6 +3,8 @@ package pkg;
 import java.util.ArrayList;
 import java.util.List;
 
+import pkg.Movimiento.Tipo;
+
 public class Cuenta {
 	
 	private Double saldo;
@@ -13,15 +15,12 @@ public class Cuenta {
 	public Cuenta(Double i, String n, String t, ArrayList<Movimiento> m) {
 		this.saldo = i;
 		this.numero = n;
+		this.titular = t;
+		this.movimientos = m;
 	}
 	
 	public Double getSaldo() {
-		if	(numero.equals("12345"))
-			return -250d;
-		else if (numero.equals("67890"))
-			return -450d;
-		else
-			return this.saldo;
+		return this.saldo;
 	}
 	
 	public void setSaldo(Double saldo) {
@@ -30,9 +29,13 @@ public class Cuenta {
 	
 	public void ingresar(Double i) {
 		saldo += i;
+		movimientos.add(new Movimiento(i, Tipo.H));
 	}
 	
 	public void retirar(Double i) {
-		saldo -= i;
+		if (saldo - i >= -500) {
+			saldo -= i;
+			movimientos.add(new Movimiento(i, Tipo.D));
+		}
 	}
 }
