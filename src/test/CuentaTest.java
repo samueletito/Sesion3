@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import pkg.Cuenta;
+import pkg.Movimiento;
 
 class CuentaTest {
 
